@@ -25,9 +25,10 @@ import {
   SearchIcon,
   Logo,
 } from "@/components/icons";
-import { Image } from "@heroui/image";
+import Image from "next/image";
 
 export const Navbar = () => {
+  const logoPath = "logo/ShelfSearch.svg";
   const searchInput = (
     <Input
       aria-label="Search"
@@ -54,9 +55,11 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex items-center justify-start gap-1" href="/">
-            <Image src="logo/ShelfSearch.svg"
-                  width={100}
-                    />
+            <Image src={logoPath}
+              alt="shelfSearch logo"
+              width={100}
+              height={100}
+            />
           </NextLink>
         </NavbarBrand>
         <ul className="justify-start hidden gap-4 ml-2 lg:flex">
@@ -76,6 +79,7 @@ export const Navbar = () => {
           ))}
         </ul>
       </NavbarContent>
+
 
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
@@ -107,6 +111,7 @@ export const Navbar = () => {
           </Button>
         </NavbarItem>
       </NavbarContent>
+
 
       <NavbarContent className="pl-4 sm:hidden basis-1" justify="end">
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
