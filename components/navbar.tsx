@@ -69,10 +69,11 @@ export const Navbar = () => {
   return (
     <>
       <HeroUINavbar maxWidth="2xl" position="sticky">
-        <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+        {/* Left section - Logo */}
+        <NavbarContent className="basis-1/3" justify="start">
           <NavbarBrand as="li" className="gap-2 max-w-fit">
             <NextLink className="flex items-center justify-start gap-1" href="/">
-              <Image 
+              <Image
                 src={logoPath}
                 alt="shelfSearch logo"
                 width={100}
@@ -80,7 +81,11 @@ export const Navbar = () => {
               />
             </NextLink>
           </NavbarBrand>
-          <ul className="justify-start hidden gap-6 mx-12 lg:flex">
+        </NavbarContent>
+
+        {/* Center section - Navigation Items */}
+        <NavbarContent className="hidden lg:flex basis-1/3" justify="center">
+          <ul className="flex gap-6">
             {siteConfig.navItems.map((item) => (
               <NavbarItem key={item.href}>
                 <NextLink
@@ -98,10 +103,8 @@ export const Navbar = () => {
           </ul>
         </NavbarContent>
 
-        <NavbarContent
-          className="hidden sm:flex basis-1/5 sm:basis-full"
-          justify="end"
-        >
+        {/* Right section - Actions */}
+        <NavbarContent className="hidden sm:flex basis-1/3" justify="end">
           <NavbarItem className="items-center hidden gap-2 sm:flex">
             {/* Heart/Favorites Link */}
             <NextLink href="/favorites">
@@ -148,6 +151,7 @@ export const Navbar = () => {
           </NavbarItem>
         </NavbarContent>
 
+        {/* Mobile content */}
         <NavbarContent className="pl-4 sm:hidden basis-1" justify="end">
           {/* Mobile Notifications */}
           <Button
@@ -172,18 +176,27 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarMenu>
-          <div className="flex flex-col gap-2 mx-4 mt-2">
-            {siteConfig.navMenuItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Link
-                  color="primary"
-                  href={item.href}
-                  size="lg"
-                >
-                  {item.label}
-                </Link>
-              </NavbarMenuItem>
-            ))}
+          <div className="flex flex-col">
+            {/* Optional top content */}
+            <div className="flex-1" />
+
+            {/* Navigation items positioned towards bottom */}
+            <div className="flex flex-col gap-6 pt-8 pb-12 mx-4">
+              {siteConfig.navMenuItems.map((item, index) => (
+                <NavbarMenuItem key={`${item}-${index}`} className="font-extrabold text-left align-bottom">
+                  <Link
+                    color="primary"
+                    href={item.href}
+                    size="lg"
+                    className="w-full"
+                  >
+                    <span className="text-3xl">
+                      {item.label}
+                    </span>
+                  </Link>
+                </NavbarMenuItem>
+              ))}
+            </div>
           </div>
         </NavbarMenu>
       </HeroUINavbar>
