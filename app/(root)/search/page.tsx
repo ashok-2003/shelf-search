@@ -1,11 +1,11 @@
 import { SimpleSearchComponent } from "@/components/simpleSearch";
 import { title } from "@/config/primitives";
 
-export default function AboutPage() {
+export default function BlogPage() {
   return (
-    <div className="w-full">
-      location
-      <SimpleSearchComponent  className="w-200" />
+    <div>
+      <h1 className={title()}>search</h1>
+      <SimpleSearchComponent />
     </div>
   );
 }
