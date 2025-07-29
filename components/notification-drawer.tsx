@@ -96,15 +96,6 @@ export const NotificationDrawer = ({
       <DrawerContent>
         <DrawerHeader className="flex items-center justify-between p-4 border-b">
           <h3 className="text-lg font-semibold">Notifications</h3>
-          <Button
-            isIconOnly
-            variant="light"
-            size="sm"
-            onClick={onClose}
-            aria-label="Close notifications"
-          >
-            <X className="w-4 h-4" />
-          </Button>
         </DrawerHeader>
 
         <DrawerBody className="flex-1 p-0">
@@ -118,10 +109,9 @@ export const NotificationDrawer = ({
                       "p-3 rounded-lg cursor-pointer hover:bg-default-50 transition-colors border-l-4",
                       notification.read 
                         ? "border-transparent bg-default-25" 
-                        : "border-blue-500 bg-blue-50"
+                        : "border-green-500 bg-green-50"
                     )}
                     onClick={() => {
-                      // Handle notification click
                       console.log("Notification clicked:", notification.id);
                     }}
                   >
@@ -161,9 +151,9 @@ export const NotificationDrawer = ({
           <DrawerFooter className="p-4 border-t">
             <Button 
               variant="flat"
-              color="primary"
+              color="success"
               className="w-full"
-              onClick={handleMarkAllAsRead}
+              onPress={handleMarkAllAsRead}
             >
               Mark all as read
             </Button>
