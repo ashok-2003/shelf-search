@@ -23,33 +23,25 @@ export const siteConfig = {
       href: "/profile",
     },
     {
-      label: "Dashboard",
+      label: "Notifications",
       href: "/dashboard",
     },
     {
-      label: "Projects",
+      label: "Favrt",
       href: "/projects",
     },
     {
-      label: "Team",
+      label: "Home",
       href: "/team",
     },
     {
-      label: "Calendar",
+      label: "Ctegories",
       href: "/calendar",
     },
     {
-      label: "Settings",
+      label: "Offers",
       href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
-    },
+    }
   ],
   links: {
     github: "https://github.com/heroui-inc/heroui",

@@ -1,3 +1,4 @@
+"use client"
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -14,6 +15,8 @@ import { Input } from "@heroui/input";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import { Heart, Bell } from "lucide-react";
+import { useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -26,9 +29,22 @@ import {
   Logo,
 } from "@/components/icons";
 import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { NotificationDrawer } from "@/components/notification-drawer";
+
+// Mock data to check for unread notifications - replace with your actual data source
+const hasUnreadNotifications = true; // This should come from your state management
 
 export const Navbar = () => {
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const logoPath = "logo/ShelfSearch.svg";
+
+  const handleMarkAllAsRead = () => {
+    // Handle marking all notifications as read
+    console.log("Marking all notifications as read");
+    // Update your state management here
+  };
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -51,98 +67,133 @@ export const Navbar = () => {
   );
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex items-center justify-start gap-1" href="/">
-            <Image src={logoPath}
-              alt="shelfSearch logo"
-              width={100}
-              height={100}
-            />
-          </NextLink>
-        </NavbarBrand>
-        <ul className="justify-start hidden gap-4 ml-2 lg:flex">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
-                color="foreground"
-                href={item.href}
+    <>
+      <HeroUINavbar maxWidth="2xl" position="sticky">
+        <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+          <NavbarBrand as="li" className="gap-2 max-w-fit">
+            <NextLink className="flex items-center justify-start gap-1" href="/">
+              <Image 
+                src={logoPath}
+                alt="shelfSearch logo"
+                width={100}
+                height={100}
+              />
+            </NextLink>
+          </NavbarBrand>
+          <ul className="justify-start hidden gap-6 mx-12 lg:flex">
+            {siteConfig.navItems.map((item) => (
+              <NavbarItem key={item.href}>
+                <NextLink
+                  className={clsx(
+                    linkStyles({ color: "foreground" }),
+                    "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  )}
+                  color="foreground"
+                  href={item.href}
+                >
+                  {item.label}
+                </NextLink>
+              </NavbarItem>
+            ))}
+          </ul>
+        </NavbarContent>
+
+        <NavbarContent
+          className="hidden sm:flex basis-1/5 sm:basis-full"
+          justify="end"
+        >
+          <NavbarItem className="items-center hidden gap-2 sm:flex">
+            {/* Heart/Favorites Link */}
+            <NextLink href="/favorites">
+              <Button
+                isIconOnly
+                variant="light"
+                aria-label="Go to Favorites"
+                className="transition-colors hover:bg-default-100"
               >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
-      </NavbarContent>
+                <Heart className="w-5 h-5" />
+              </Button>
+            </NextLink>
 
+            {/* Notifications Bell with Dot Indicator */}
+            <Button
+              isIconOnly
+              variant="light"
+              aria-label="Open notifications"
+              className={clsx(
+                "relative hover:bg-default-100 transition-all duration-200",
+                hasUnreadNotifications && "animate-pulse"
+              )}
+              onPress={() => setIsNotificationOpen(true)}
+            >
+              <Bell className="w-5 h-5" />
+              {hasUnreadNotifications && (
+                <>
+                  {/* Red dot indicator */}
+                  <span className="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-red-500 border border-white"></span>
+                  {/* Subtle red glow/vibration effect */}
+                  <span className="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-red-500 animate-ping opacity-75"></span>
+                </>
+              )}
+            </Button>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
-      >
-        <NavbarItem className="hidden gap-2 sm:flex">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
-          <ThemeSwitch />
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        <NavbarItem className="hidden md:flex">
+            {/* User Avatar */}
+            <Avatar className="ml-2 rounded-full">
+              <AvatarImage
+                src="https://github.com/evilrabbit.png"
+                alt="@evilrabbit"
+              />
+              <AvatarFallback>User</AvatarFallback>
+            </Avatar>
+          </NavbarItem>
+        </NavbarContent>
+
+        <NavbarContent className="pl-4 sm:hidden basis-1" justify="end">
+          {/* Mobile Notifications */}
           <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat"
+            isIconOnly
+            variant="light"
+            aria-label="Open notifications"
+            className={clsx(
+              "relative hover:bg-default-100 transition-all duration-200 sm:hidden",
+              hasUnreadNotifications && "animate-pulse"
+            )}
+            onPress={() => setIsNotificationOpen(true)}
           >
-            Sponsor
+            <Bell className="w-5 h-5" />
+            {hasUnreadNotifications && (
+              <>
+                <span className="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-red-500 border border-white"></span>
+                <span className="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-red-500 animate-ping opacity-75"></span>
+              </>
+            )}
           </Button>
-        </NavbarItem>
-      </NavbarContent>
+          <NavbarMenuToggle />
+        </NavbarContent>
 
+        <NavbarMenu>
+          <div className="flex flex-col gap-2 mx-4 mt-2">
+            {siteConfig.navMenuItems.map((item, index) => (
+              <NavbarMenuItem key={`${item}-${index}`}>
+                <Link
+                  color="primary"
+                  href={item.href}
+                  size="lg"
+                >
+                  {item.label}
+                </Link>
+              </NavbarMenuItem>
+            ))}
+          </div>
+        </NavbarMenu>
+      </HeroUINavbar>
 
-      <NavbarContent className="pl-4 sm:hidden basis-1" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch />
-        <NavbarMenuToggle />
-      </NavbarContent>
-
-      <NavbarMenu>
-        {searchInput}
-        <div className="flex flex-col gap-2 mx-4 mt-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg"
-              >
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </div>
-      </NavbarMenu>
-    </HeroUINavbar>
+      {/* Notification Drawer */}
+      <NotificationDrawer
+        isOpen={isNotificationOpen}
+        onClose={() => setIsNotificationOpen(false)}
+        onMarkAllAsRead={handleMarkAllAsRead}
+      />
+    </>
   );
 };
