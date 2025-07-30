@@ -85,7 +85,7 @@ export const Navbar = () => {
 
         {/* Center section - Navigation Items */}
         <NavbarContent className="hidden lg:flex basis-1/3" justify="center">
-          <ul className="flex gap-6">
+          <ul className="flex gap-6 font-semibold">
             {siteConfig.navItems.map((item) => (
               <NavbarItem key={item.href}>
                 <NextLink

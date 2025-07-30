@@ -25,19 +25,6 @@ export const SimpleSearchComponent = ({
     router.push('/search');
   };
 
-  // Optional: Add keyboard shortcut support
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        router.push('/search');
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [router]);
-
   return (
     <div 
       onClick={handleClick}
@@ -50,7 +37,7 @@ export const SimpleSearchComponent = ({
         }
         classNames={{
           base: "w-full", // Input takes full width of container
-          inputWrapper: "bg-default-100 hover:bg-default-200 transition-colors cursor-pointer",
+          inputWrapper: "bg-default-200 hover:bg-default-100 transition-colors cursor-pointer",
           input: "text-sm placeholder:text-default-500 cursor-pointer",
         }}
         radius="sm"

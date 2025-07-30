@@ -156,7 +156,7 @@ export const LoginPage = () => {
                         <div className="mt-4 text-center">
                             <p className="text-sm">
                                 Continue without login{" "}
-                                <a href="/about" className="font-medium text-green-500 hover:text-green-600">
+                                <a href="/home" className="font-medium text-green-500 hover:text-green-600">
                                     Click
                                 </a>
                             </p>
