@@ -1,6 +1,5 @@
 import { SimpleSearchComponent } from "@/components/simpleSearch";
 import { title } from "@/config/primitives";
-import { Card, CardContent } from "@/components/ui/card";
 import { Image } from "@heroui/image";
 
 export default function AboutPage() {
@@ -90,65 +89,68 @@ export default function AboutPage() {
 
   return (
     <div className="w-full">
-        <div className="flex flex-row justify-between">
-          <div>
-            location
-          </div>
-          <div>
-            cart
-          </div>
+      <div className="flex flex-row justify-between">
+        <div>
+          location
         </div>
         <div>
-          <SimpleSearchComponent className="w-200" />
+          cart
         </div>
-        <div>
-          <h1 className={title({size:"sm"})}>Quick Delivery</h1>
-          <div className="flex flex-row gap-4 pb-4 overflow-x-auto">
-            {result.eta.map((item) => (
-              <Card key={item.storeId} className="flex-shrink-0 w-32 overflow-hidden transition-shadow shadow-sm rounded-xl hover:shadow-md">
-                <CardContent className="p-0">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <Image 
-                      src={item.image} 
-                      alt={item.platform}
-                      width={80}
-                      height={60}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="p-3 space-y-1">
-                    <p className="text-sm font-medium text-gray-900">{item.platform}</p>
-                    <p className="text-xs text-gray-600">{item.eta}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+      </div>
+      <div>
+        <SimpleSearchComponent/>
+      </div>
 
-        <div>
-          <h1 className={title({size:"sm"})}>Trending Items</h1>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7">
-            {result.trendingItems.map((item , index) => (
-              <Card key={index} className="overflow-hidden transition-shadow shadow-sm rounded-xl hover:shadow-md">
-                <CardContent className="p-0">
-                  <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200">
-                    <Image 
-                      src={item.image} 
-                      alt={item.name}
-                      width={150}
-                      height={150}
-                      className="object-cover w-full h-full rounded-t-xl"
-                    />
-                  </div>
-                  <div className="p-3">
-                    <p className="text-sm font-medium text-center text-gray-900">{item.name}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      {/* Quick Delivery Section */}
+      <div className="mb-8">
+        <h1 className={title({size:"sm"})}>Quick Delivery</h1>
+        <div className="flex gap-2 mt-4 overflow-x-auto">
+          {result.eta.map((item) => (
+            <div key={item.storeId} className="flex-shrink-0">
+              <div className="mb-2">
+                <div className="flex items-center justify-center w-full rounded-sm">
+                  <Image 
+                    src={item.image} 
+                    alt={item.platform}
+                    width={100}
+                    height={64}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm font-medium">{item.platform}</p>
+                  <p className="mt-1 text-xs text-gray-500">{item.eta}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
+
+      {/* Trending Items Section */}
+      <div>
+        <h1 className={title({size:"sm"})}>Trending Items</h1>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+          {result.trendingItems.map((item, index) => (
+            <div key={index} className="cursor-pointer group">
+              <div className="overflow-hidden transition-shadow bg-white rounded-xl hover:shadow-md">
+                <div className="p-4 aspect-square bg-gray-50">
+                  <Image 
+                    src={item.image} 
+                    alt={item.name}
+                    width={150}
+                    height={150}
+                    className="object-cover w-full h-full rounded-lg"
+                  />
+                </div>
+                <div className="p-3">
+                  <p className="text-sm font-medium text-center text-gray-900">{item.name}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

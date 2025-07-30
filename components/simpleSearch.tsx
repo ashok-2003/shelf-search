@@ -17,7 +17,7 @@ export const SimpleSearchComponent = ({
   placeholder = "Search...", 
   className = "",
   showKbd = true,
-  width = "w-96" // Default Tailwind width class (384px but responsive)
+  width = "w-40" // Default Tailwind width class (384px but responsive)
 }: CommandSearchProps) => {
   const router = useRouter();
 
