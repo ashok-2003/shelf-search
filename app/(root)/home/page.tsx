@@ -1,8 +1,7 @@
 import { SimpleSearchComponent } from "@/components/simpleSearch";
 import { title } from "@/config/primitives";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Image } from "@heroui/image";
-import { Badge } from "@/components/ui/badge";
 
 export default function AboutPage() {
   const result = {
@@ -90,102 +89,66 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="w-full p-4 mx-auto space-y-6 max-w-7xl">
-      {/* Header Section */}
-      <div className="flex flex-row items-center justify-between">
-        <div className="text-lg font-semibold text-foreground">
-          📍 Your Location
+    <div className="w-full">
+        <div className="flex flex-row justify-between">
+          <div>
+            location
+          </div>
+          <div>
+            cart
+          </div>
         </div>
-        <div className="text-lg font-semibold text-foreground">
-          🛒 Cart
+        <div>
+          <SimpleSearchComponent className="w-200" />
         </div>
-      </div>
+        <div>
+          <h1 className={title({size:"sm"})}>Quick Delivery</h1>
+          <div className="flex flex-row gap-4 pb-4 overflow-x-auto">
+            {result.eta.map((item) => (
+              <Card key={item.storeId} className="flex-shrink-0 w-32 overflow-hidden transition-shadow shadow-sm rounded-xl hover:shadow-md">
+                <CardContent className="p-0">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <Image 
+                      src={item.image} 
+                      alt={item.platform}
+                      width={80}
+                      height={60}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="p-3 space-y-1">
+                    <p className="text-sm font-medium text-gray-900">{item.platform}</p>
+                    <p className="text-xs text-gray-600">{item.eta}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-      {/* Search Section */}
-      <div className="flex justify-center">
-        <SimpleSearchComponent 
-          width="w-full max-w-md" 
-          placeholder="Search for products..."
-        />
-      </div>
-
-      {/* Quick Delivery Section */}
-      <div className="space-y-4">
-        <h1 className={title({ size: "sm" })}>
-          {result.meta.etaTitle}
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {result.eta.map((item, index) => (
-            <Card 
-              key={item.storeId || index} 
-              className="relative transition-shadow cursor-pointer hover:shadow-md"
-            >
-              <CardHeader className="pb-2">
-                <div className="flex items-start justify-between">
-                  <CardTitle className="text-sm font-semibold">
-                    {item.platform}
-                  </CardTitle>
-                  {item.open && (
-                    <Badge variant="secondary" className="text-xs text-green-800 bg-green-100">
-                      Open
-                    </Badge>
-                  )}
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex justify-center">
-                  <Image
-                    src={item.image}
-                    alt={item.platform}
-                    width={60}
-                    height={60}
-                    className="object-contain rounded-lg"
-                    fallbackSrc="/api/placeholder/60/60"
-                  />
-                </div>
-                <div className="text-center">
-                  <Badge variant="outline" className="text-xs font-medium">
-                    🚚 {item.eta}
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div>
+          <h1 className={title({size:"sm"})}>Trending Items</h1>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7">
+            {result.trendingItems.map((item , index) => (
+              <Card key={index} className="overflow-hidden transition-shadow shadow-sm rounded-xl hover:shadow-md">
+                <CardContent className="p-0">
+                  <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200">
+                    <Image 
+                      src={item.image} 
+                      alt={item.name}
+                      width={150}
+                      height={150}
+                      className="object-cover w-full h-full rounded-t-xl"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-sm font-medium text-center text-gray-900">{item.name}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* Trending Items Section */}
-      <div className="space-y-4">
-        <h1 className={title({ size: "sm" })}>
-          {result.meta.trendingTitle}
-        </h1>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {result.trendingItems.map((item, index) => (
-            <Card 
-              key={index} 
-              className="transition-shadow cursor-pointer hover:shadow-md"
-            >
-              <CardContent className="p-3 space-y-3">
-                <div className="flex items-center justify-center rounded-lg aspect-square bg-gray-50">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={80}
-                    height={80}
-                    className="object-cover rounded-lg"
-                    fallbackSrc="/api/placeholder/80/80"
-                  />
-                </div>
-                <div className="text-center">
-                  <CardTitle className="text-sm font-medium text-foreground">
-                    {item.name}
-                  </CardTitle>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
