@@ -37,7 +37,7 @@ export const SimpleSearchComponent = ({
         }
         classNames={{
           base: "w-full", // Input takes full width of container
-          inputWrapper: "bg-default-200 hover:bg-default-100 transition-colors cursor-pointer",
+          inputWrapper: "bg-[#F2F5F2] transition-colors cursor-pointer",
           input: "text-sm placeholder:text-default-500 cursor-pointer",
         }}
         radius="sm"

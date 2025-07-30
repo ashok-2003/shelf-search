@@ -97,17 +97,16 @@ export default function AboutPage() {
           cart
         </div>
       </div>
-      <div>
+      <div className="mb-8">
         <SimpleSearchComponent/>
       </div>
 
       {/* Quick Delivery Section */}
       <div className="mb-8">
         <h1 className={title({size:"sm"})}>Quick Delivery</h1>
-        <div className="flex gap-2 mt-4 overflow-x-auto">
+        <div className="flex gap-8 mt-6 overflow-x-auto md:mt-8">
           {result.eta.map((item) => (
-            <div key={item.storeId} className="flex-shrink-0">
-              <div className="mb-2">
+            <div key={item.storeId} className="flex-shrink-0 mb-2">
                 <div className="flex items-center justify-center w-full rounded-sm">
                   <Image 
                     src={item.image} 
@@ -119,34 +118,32 @@ export default function AboutPage() {
                 </div>
                 <div className="text-left">
                   <p className="text-sm font-medium">{item.platform}</p>
-                  <p className="mt-1 text-xs text-gray-500">{item.eta}</p>
+                  <p className="mt-1 text-xs font-light text-defalut-50">{item.eta}</p>
                 </div>
-              </div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Trending Items Section */}
-      <div>
+      <div className="mb-8">
         <h1 className={title({size:"sm"})}>Trending Items</h1>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+        <div className="grid grid-cols-3 gap-2 pt-2 mt-6 md:mt-8 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
           {result.trendingItems.map((item, index) => (
-            <div key={index} className="cursor-pointer group">
-              <div className="overflow-hidden transition-shadow bg-white rounded-xl hover:shadow-md">
-                <div className="p-4 aspect-square bg-gray-50">
+            <div key={index} className="mb-2 cursor-pointer group">
+              
+                <div className="flex items-center justify-center">
                   <Image 
                     src={item.image} 
                     alt={item.name}
-                    width={150}
-                    height={150}
-                    className="object-cover w-full h-full rounded-lg"
+                    className="object-contain transition-all rounded-sm shadow-md shadow-gray-600/40 hover:shadow-lg hover:shadow-gray-700/50"
+                    
                   />
                 </div>
-                <div className="p-3">
-                  <p className="text-sm font-medium text-center text-gray-900">{item.name}</p>
+                <div className="mt-2 ml-1 text-left">
+                  <p className="font-medium text-md">{item.name}</p>
                 </div>
-              </div>
+              
             </div>
           ))}
         </div>
