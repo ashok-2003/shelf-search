@@ -2,26 +2,31 @@
 import React, { useState } from 'react';
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Image } from "@heroui/image";
 import { useRouter } from "next/navigation";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 
-export const LoginPage = () => {
+export const RegisterPage = () => {
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
+    const [showVerifyPassword, setShowVerifyPassword] = useState(false);
     const [errors, setErrors] = useState<{
-        userName?: string;
+        email?: string;
         password?: string;
+        verifyPassword?: string;
         apiError?: string;
     }>({});
     const [formData, setFormData] = useState({
-        userName: "",
+        email: "",
         password: "",
-        rememberMe: false,
+        verifyPassword: "",
     });
-    const isButtonDisabled = formData.userName?.trim() === "" || formData.password?.trim() === "";
+    
+    const isButtonDisabled = 
+        formData.email?.trim() === "" || 
+        formData.password?.trim() === "" || 
+        formData.verifyPassword?.trim() === "";
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { id, value } = e.target;
@@ -29,12 +34,31 @@ export const LoginPage = () => {
         setErrors((prevErrors) => ({ ...prevErrors, [id]: "", apiError: "" }));
     };
 
+    const validateEmail = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
     const validateForm = () => {
-        const newErrors: { userName?: string; password?: string } = {};
-        if (!formData.userName) newErrors.userName = "Username is required";
-        if (formData.userName && formData.userName.length < 3) newErrors.userName = "Username must be at least 3 characters long";
-        if (!formData.password) newErrors.password = "Password is required";
-        if (formData.password && formData.password.length < 8) newErrors.password = "Password must be at least 8 characters long";
+        const newErrors: { email?: string; password?: string; verifyPassword?: string } = {};
+        
+        if (!formData.email) {
+            newErrors.email = "Email is required";
+        } else if (!validateEmail(formData.email)) {
+            newErrors.email = "Please enter a valid email address";
+        }
+        
+        if (!formData.password) {
+            newErrors.password = "Password is required";
+        } else if (formData.password.length < 8) {
+            newErrors.password = "Password must be at least 8 characters long";
+        }
+        
+        if (!formData.verifyPassword) {
+            newErrors.verifyPassword = "Please verify your password";
+        } else if (formData.password !== formData.verifyPassword) {
+            newErrors.verifyPassword = "Passwords do not match";
+        }
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -44,15 +68,19 @@ export const LoginPage = () => {
         try {
             e.preventDefault();
             if (!validateForm()) return;
-            // Authentication logic will go here
-            console.log("Form submitted:", formData);
+            // Registration logic will go here
+            console.log("Registration form submitted:", formData);
         } catch (error) {
-            console.error("Login error:", error);
+            console.error("Registration error:", error);
         }
     };
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
+    };
+
+    const toggleVerifyPasswordVisibility = () => {
+        setShowVerifyPassword(!showVerifyPassword);
     };
 
     return (
@@ -69,28 +97,28 @@ export const LoginPage = () => {
                 </div>
             </div>
 
-            {/* Right Side - Login Form */}
+            {/* Right Side - Register Form */}
             <div className="flex items-center justify-center p-8 bg-gray-100 dark:bg-gray-800">
                 <div className="w-full max-w-md">
-                    <h1 className="mb-2 text-2xl font-semibold">Log In</h1>
+                    <h1 className="mb-2 text-2xl font-semibold">Create Account</h1>
                     <p className="mb-6 text-sm text-gray-600 dark:text-gray-300">
-                        Welcome to ShelfSearch platform, Log In as member to experience
+                        Join ShelfSearch platform and discover amazing features
                     </p>
 
                     <form className="space-y-5" onSubmit={handleSubmit}>
                         <div>
-                            <Label htmlFor="userName">Email</Label>
+                            <Label htmlFor="email">Email</Label>
                             <Input 
-                                id="userName" 
-                                type="text" 
-                                name="userName"
+                                id="email" 
+                                type="email" 
+                                name="email"
                                 className="mt-1 bg-white dark:bg-gray-950"
                                 placeholder="Example@email.com" 
-                                value={formData.userName} 
+                                value={formData.email} 
                                 onChange={handleChange} 
                             />
-                            {errors.userName && (
-                                <p className="mt-1 text-xs text-red-500">{errors.userName}</p>
+                            {errors.email && (
+                                <p className="mt-1 text-xs text-red-500">{errors.email}</p>
                             )}
                         </div>
 
@@ -123,26 +151,33 @@ export const LoginPage = () => {
                             )}
                         </div>
 
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center space-x-2">
-                                <Checkbox
-                                    id="rememberMe"
-                                    className='bg-white dark:bg-gray-950'
-                                    checked={formData.rememberMe}
-                                    onCheckedChange={(checked) => 
-                                        setFormData({
-                                            ...formData,
-                                            rememberMe: checked === true
-                                        })
-                                    }
+                        <div>
+                            <Label htmlFor="verifyPassword">Verify Password</Label>
+                            <div className="relative mt-1">
+                                <Input 
+                                    id="verifyPassword" 
+                                    type={showVerifyPassword ? "text" : "password"} 
+                                    name="verifyPassword" 
+                                    className='mt-1 bg-white dark:bg-gray-950'
+                                    placeholder="Confirm your password" 
+                                    value={formData.verifyPassword} 
+                                    onChange={handleChange}
                                 />
-                                <Label htmlFor="rememberMe" className="text-sm cursor-pointer">
-                                    Remember me
-                                </Label>
+                                <button
+                                    type="button"
+                                    className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500"
+                                    onClick={toggleVerifyPasswordVisibility}
+                                >
+                                    {showVerifyPassword ? (
+                                        <EyeOffIcon className="w-4 h-4" />
+                                    ) : (
+                                        <EyeIcon className="w-4 h-4" />
+                                    )}
+                                </button>
                             </div>
-                            <a href="#" className="text-sm font-medium text-blue-500 hover:text-blue-600">
-                                Forgot Password?
-                            </a>
+                            {errors.verifyPassword && (
+                                <p className="mt-1 text-xs text-red-500">{errors.verifyPassword}</p>
+                            )}
                         </div>
 
                         <Button 
@@ -150,12 +185,12 @@ export const LoginPage = () => {
                             className="w-full text-white bg-green-500 hover:bg-green-600" 
                             disabled={isButtonDisabled}
                         >
-                            Log In
+                            Create Account
                         </Button>
 
                         <div className="mt-4 space-y-3 text-center">
                             <p className="text-sm">
-                                Continue without login{" "}
+                                Continue without registration{" "}
                                 <button 
                                     type="button"
                                     onClick={() => router.push('/home')}
@@ -166,13 +201,13 @@ export const LoginPage = () => {
                             </p>
                             <div className="border-t border-gray-300 dark:border-gray-600"></div>
                             <p className="text-sm">
-                                New user?{" "}
+                                Already have an account?{" "}
                                 <button 
                                     type="button"
-                                    onClick={() => router.push('/auth/register')}
+                                    onClick={() => router.push('/auth/login')}
                                     className="font-medium text-green-500 underline hover:text-green-600"
                                 >
-                                    Register
+                                    Login
                                 </button>
                             </p>
                         </div>
