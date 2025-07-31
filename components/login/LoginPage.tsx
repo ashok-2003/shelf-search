@@ -61,7 +61,7 @@ export const LoginPage = () => {
             <div className="flex flex-col items-center justify-center p-8">
                 <div className="flex flex-col items-center justify-center w-full max-w-md">
                     <Image 
-                        src="logo/ShelfSearch.svg"
+                        src="/logo/ShelfSearch.svg"
                         width={250}
                         height={250}
                         alt="ShelfSearch Logo"
