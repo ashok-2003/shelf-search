@@ -132,18 +132,18 @@ export default function AboutPage() {
       {/* Trending Items Section */}
       <div className="mb-8">
         <h1 className={title({size:"sm"})}>Trending Items</h1>
-        <div className="grid grid-cols-3 gap-2 pt-2 mt-6 md:mt-8 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
+        <div className="grid grid-cols-3 gap-2 p-2 mt-6 rounded-sm md:mt-8 md:grid-cols-5 lg:grid-cols-6 bg-default-50">
           {result.trendingItems.map((item, index) => (
-            <div key={index} className="mb-2 cursor-pointer group">
+            <div key={index} className="py-1 mb-2 border rounded-sm cursor-pointer border-default-100 group border-spacing-1">
               <div className="flex items-center justify-center">
                 <Image 
                   src={item.image} 
                   alt={item.name}
-                  className="object-contain transition-all rounded-sm shadow-md shadow-gray-600/40 hover:shadow-lg hover:shadow-gray-700/50"
+                  className="object-contain transition-all rounded-sm shadow-md shadow-gray-200/40 hover:shadow-lg hover:shadow-gray-400/50"
                 />
               </div>
               <div className="mt-2 ml-1 text-left">
-                <p className="font-medium text-md">{item.name}</p>
+                <p className="text-sm font-medium">{item.name}</p>
               </div>
             </div>
           ))}
