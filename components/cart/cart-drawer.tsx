@@ -107,11 +107,6 @@ export const CartDrawer = ({
       <DrawerContent>
         <DrawerHeader className="flex items-center justify-between p-4 border-b">
           <h3 className="text-lg font-semibold">My Cart</h3>
-          {cartItems.length > 0 && (
-            <Badge content={cartItems.length.toString()} color="primary">
-              <ShoppingCart className="w-5 h-5" />
-            </Badge>
-          )}
         </DrawerHeader>
 
         <DrawerBody className="flex-1 p-0">

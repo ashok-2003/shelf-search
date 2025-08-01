@@ -1,0 +1,57 @@
+"use client"
+import React from 'react';
+import { Button } from "@/components/ui/button";
+import { MapPin, ChevronDown } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+interface LocationButtonProps {
+  currentLocation?: {
+    city: string;
+    area: string;
+    state: string;
+    country: string;
+  };
+}
+
+export const LocationButton: React.FC<LocationButtonProps> = ({ 
+  currentLocation 
+}) => {
+  const router = useRouter();
+
+  // Default location fallback
+  const defaultLocation = {
+    city: "Delhi",
+    area: "Connaught Place",
+    state: "Delhi",
+    country: "India"
+  };
+
+  const location = currentLocation || defaultLocation;
+
+  const handleLocationClick = () => {
+    router.push('/location');
+  };
+
+  return (
+    <Button
+      variant="ghost"
+      onClick={handleLocationClick}
+      className="flex items-center gap-2 p-2 text-left hover:bg-gray-100 dark:hover:bg-gray-800"
+    >
+      <div className="flex items-center gap-2">
+        <MapPin className="w-4 h-4 text-green-500" />
+        <div className="flex flex-col">
+          <div className="flex items-center gap-1">
+            <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+              Delivering to
+            </span>
+            <ChevronDown className="w-3 h-3 text-gray-500" />
+          </div>
+          <span className="text-xs text-gray-600 dark:text-gray-400 truncate max-w-[200px]">
+            {location.area}, {location.city}, {location.state}, {location.country}
+          </span>
+        </div>
+      </div>
+    </Button>
+  );
+};
