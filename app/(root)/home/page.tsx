@@ -7,14 +7,6 @@ import { LocationButton } from "@/components/location/locationButton";
 export default function AboutPage() {
   const cartItemsCount = 3; // This will come from your server-side cart state later
 
-  // This will come from your location context later
-  const currentLocation = {
-    city: "Gurugram",
-    area: "Sector 69",
-    state: "Haryana",
-    country: "India"
-  };
-
   const result = {
     "trending": [
         "Davidoff",
@@ -103,7 +95,7 @@ export default function AboutPage() {
     <div className="w-full">
       <div className="flex flex-row items-center justify-between mb-4">
         <div>
-          <LocationButton currentLocation={currentLocation} />
+          <LocationButton/>
         </div>
         <div>
           <CartButton cartItemsCount={cartItemsCount} />
