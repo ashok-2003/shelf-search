@@ -138,12 +138,12 @@ export default function AboutPage() {
         <h1 className={title({size:"sm"})}>Trending Items</h1>
         <div className="grid grid-cols-3 gap-2 p-2 mt-6 rounded-sm md:mt-8 md:grid-cols-5 lg:grid-cols-6 bg-default-50">
           {result.trendingItems.map((item, index) => (
-            <div key={index} className="pb-1 mb-2 bg-white border rounded-sm cursor-pointer border-default-100 group border-spacing-1">
+            <div key={index} className="pb-1 mb-2 transition-all bg-white border rounded-sm shadow-md cursor-pointer border-default-100 group border-spacing-1 shadow-gray-200/40 hover:shadow-lg hover:shadow-gray-400/50">
               <div className="flex items-center justify-center">
                 <Image 
                   src={item.imageUrl} 
                   alt={item.name}
-                  className="object-contain transition-all rounded-sm shadow-md shadow-gray-200/40 hover:shadow-lg hover:shadow-gray-400/50"
+                  className="object-contain rounded-sm"
                 />
               </div>
               <div className="mt-2 ml-1 text-left">
