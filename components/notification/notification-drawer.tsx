@@ -1,6 +1,6 @@
 "use client";
 
-import { 
+import {
   Drawer,
   DrawerContent,
   DrawerHeader,
@@ -72,10 +72,10 @@ interface NotificationDrawerProps {
   onMarkAllAsRead: () => void;
 }
 
-export const NotificationDrawer = ({ 
-  isOpen, 
-  onClose, 
-  onMarkAllAsRead 
+export const NotificationDrawer = ({
+  isOpen,
+  onClose,
+  onMarkAllAsRead
 }: NotificationDrawerProps) => {
   const handleMarkAllAsRead = () => {
     onMarkAllAsRead();
@@ -107,8 +107,8 @@ export const NotificationDrawer = ({
                     key={notification.id}
                     className={clsx(
                       "p-3 rounded-lg cursor-pointer hover:bg-default-50 transition-colors border-l-4",
-                      notification.read 
-                        ? "border-transparent bg-default-25" 
+                      notification.read
+                        ? "border-transparent bg-default-25"
                         : "border-green-500 bg-green-50"
                     )}
                     onClick={() => {
@@ -149,7 +149,7 @@ export const NotificationDrawer = ({
 
         {mockNotifications.length > 0 && (
           <DrawerFooter className="p-4 border-t">
-            <Button 
+            <Button
               variant="flat"
               color="success"
               className="w-full"

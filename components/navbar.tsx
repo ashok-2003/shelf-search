@@ -30,7 +30,7 @@ import {
 } from "@/components/icons";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { NotificationDrawer } from "@/components/notification-drawer";
+import { NotificationDrawer } from "@/components/notification/notification-drawer";
 
 // Mock data to check for unread notifications - replace with your actual data source
 const hasUnreadNotifications = true; // This should come from your state management
