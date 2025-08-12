@@ -1,6 +1,8 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { FilterBar, Platform } from './filter';
+import { SimpleSearchComponent } from '@/components/simpleSearch';
+import { CartButton } from '@/components/cart/cart-button';
 
 // Assuming this data would be fetched from an API in a real-world scenario
 const availablePlatforms: Platform[] = [
@@ -53,7 +55,7 @@ export default function DocsPage() {
 
   return (
     <div className="flex flex-row gap-2">
-      <div className="w-1/5 gap-4 border border-red-500">
+      <div className="w-1/5 border border-red-500">
         <FilterBar
           onPriceChange={setMaxPrice}
           onPlatformsChange={setSelectedPlatforms}
@@ -61,10 +63,14 @@ export default function DocsPage() {
         />
       </div>
       <div className="w-4/5 border border-red-500">
-        <div className="flex flex-col">
-          <div className="flex flex-row">
-            <div>search</div>
-            <div>cart</div>
+        <div className="flex flex-col gap-4 m-2">
+          <div className="flex flex-row justify-between">
+            <div>
+              <SimpleSearchComponent />
+            </div>
+            <div>
+              <CartButton />
+            </div>
           </div>
           <div>categorries</div>
           <div>
