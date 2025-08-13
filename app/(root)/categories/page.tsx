@@ -4,13 +4,12 @@ import { FilterSideBar, Platform } from './FilterSideBar';
 import { FilterDrawer } from './FilterDrawer';
 import { SimpleSearchComponent } from '@/components/simpleSearch';
 import { CartButton } from '@/components/cart/cart-button';
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { SlidersHorizontal } from 'lucide-react';
 import { CategoryCard } from './CategoryCard';
 import { Products } from '@/lib/DemoData/CategoryDefault';
 import { Image } from '@heroui/image';
-
+import { Button } from '@heroui/button';
 
 // Assuming this data would be fetched from an API in a real-world scenario
 const availablePlatforms: Platform[] = [
@@ -53,29 +52,12 @@ const categories = [
     "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&crop=center"
   },
   {
-    "name": "Medical",
-    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    "name": "Beauty",
-    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    "name": "Sports",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    "name": "Books",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=center"
-  },
-  {
     "name": "Clothing",
     "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=400&fit=crop&crop=center"
   }
 ];
 
 const result = Products
-
 
 // Product interface
 interface Product {
@@ -84,9 +66,7 @@ interface Product {
   platform: string;
 }
 
-
-
-export default function DocsPage() {
+export default function CategoryPage() {
   // State for the filter values
   const [maxPrice, setMaxPrice] = useState<number>(100);
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
@@ -118,9 +98,9 @@ export default function DocsPage() {
   }, [maxPrice, selectedPlatforms, selectedCategory]);
 
   return (
-    <div className="flex flex-row min-h-screen gap-2">
-
-      <div className="hidden w-1/5 min-h-screen md:block">
+    <div className="flex min-h-screen gap-2">
+      {/* Filter Sidebar */}
+      <div className="hidden w-1/5 h-full overflow-y-auto md:block">
         <FilterSideBar
           onPriceChange={setMaxPrice}
           onPlatformsChange={setSelectedPlatforms}
@@ -128,31 +108,36 @@ export default function DocsPage() {
         />
       </div>
 
-      <div className="w-full md:w-4/5">
-        <div className="flex flex-col gap-4 m-2">
-          <div className="grid w-full grid-cols-12 gap-1 sm:gap-2">
-            {/* Filter Button for mobile screens */}
+      {/* Main Content */}
+      <div className="flex flex-col w-full h-full md:w-4/5">
+        {/* Fixed Header Section */}
+        <div className="flex-shrink-0 p-2 space-y-4">
+          {/* Search and Cart Row */}
+          <div className="grid items-center w-full grid-cols-12 gap-1 sm:gap-2">
             <div className="col-span-2 md:hidden">
               <Button
-                onClick={openFilterDrawer}
-                variant="outline"
-                className="flex items-center justify-center w-full gap-2"
+                isIconOnly
+                onPress={openFilterDrawer}
+                variant="flat"
+                className="items-center"
+                size="lg"
+                radius='sm'
               >
                 <SlidersHorizontal className="w-4 h-4" />
               </Button>
             </div>
 
-            <div className="col-span-7 md:col-span-10">
+            <div className="col-span-8 md:col-span-10">
               <SimpleSearchComponent className='w-full' />
             </div>
 
-            {/* just for extra space  */}
-            <div className='col-span-1 md:hidden' />
+            
             <div className="col-span-2 justify-self-end">
               <CartButton />
             </div>
           </div>
 
+          {/* Categories Row */}
           <div className="flex gap-4 px-1 pb-2 overflow-x-auto">
             {categories.map((category) => (
               <CategoryCard
@@ -163,11 +148,13 @@ export default function DocsPage() {
               />
             ))}
           </div>
+        </div>
 
-          
-          <div className="grid grid-cols-3 gap-2 p-2 mt-6 rounded-sm md:mt-8 md:grid-cols-5 lg:grid-cols-6 bg-default-50">
+        {/* Scrollable Products Section */}
+        <div className="flex-1 max-h-screen overflow-y-auto">
+          <div className="grid grid-cols-2 gap-2 p-2 rounded-sm md:grid-cols-5 lg:grid-cols-6 bg-default-50">
             {result.data.map((item, index) => (
-              <div key={item.id} className="pb-1 mb-2 transition-all bg-white border rounded-sm shadow-md cursor-pointer border-default-100 group border-spacing-1 shadow-gray-200/40 hover:shadow-lg hover:shadow-gray-400/50">
+              <div key={item.id} className="pb-1 mb-2 bg-white border rounded-sm shadow-md cursor-pointer border-default-100 hover:shadow-lg">
                 <div className="flex items-center justify-center">
                   <Image
                     src={item.imageUrl}
@@ -182,7 +169,8 @@ export default function DocsPage() {
             ))}
           </div>
 
-          <div>
+          {/* Debug Info */}
+          <div className="p-2">
             <p>Products will be filtered based on:</p>
             <p>Max Price: {maxPrice}</p>
             <p>Selected Platforms: {selectedPlatforms.join(', ')}</p>
@@ -192,8 +180,7 @@ export default function DocsPage() {
         </div>
       </div>
 
-
-      {/* Mobile Filter Drawer (conditionally rendered) */}
+      {/* Mobile Filter Drawer */}
       <FilterDrawer
         isOpen={isFilterDrawerOpen}
         onClose={closeFilterDrawer}

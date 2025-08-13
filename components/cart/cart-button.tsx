@@ -17,17 +17,18 @@ export const CartButton = ({ cartItemsCount = 3 }: CartButtonProps) => {
     return (
         <>
             <Button
+                size="lg"
                 radius="sm"
-                className="flex items-center gap-2 bg-[#176a43] text-white"
+                className="bg-[#176a43] text-white px-4 min-w-2"
                 onPress={() => setIsCartOpen(true)}
                 isLoading={false}
             >
                 {cartItemsCount > 0 ? (
-                    <ShoppingCartIcon className="w-5 h-5" />
+                    <ShoppingCartIcon className="w-4 h-4" />
                 ) : (
-                    <ShoppingCart className="w-5 h-5" />
+                    <ShoppingCart className="w-4 h-4" />
                 )}
-                <span className="hidden sm:inline">Cart</span>
+                <span className="hidden text-xs sm:inline">Cart</span>
             </Button>
 
             {/* Cart Drawer */}

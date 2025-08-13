@@ -41,7 +41,7 @@ export const CategoryCard = ({
           
           {/* Fixed Bottom Border - always at the bottom */}
           <div className={`w-full h-1 mt-auto ${
-            isSelected ? 'bg-gray-800' : 'bg-transparent'
+            isSelected ? 'bg-gray-700' : 'bg-transparent'
           } rounded-sm`} />
         </div>
       </div>

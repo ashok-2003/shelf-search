@@ -444,6 +444,786 @@ export const Products = {
             "reviews": [],
             "createdAt": "2025-08-04T16:48:30.347Z",
             "updatedAt": "2025-08-04T16:48:30.347Z"
+        },
+        {
+            "id": "e9ad4b8f-fe50-44c7-8b02-a1e926d5c7b4",
+            "name": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "description": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 76,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 82.43,
+                    "platform": "Blinkit",
+                    "deliveryTime": "6 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 74.21,
+                    "discount": 5.89,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 70,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.428Z",
+            "updatedAt": "2025-08-04T16:48:30.428Z"
+        },
+        {
+            "id": "ff7319a9-9477-4347-8acb-d00877e69106",
+            "name": "Amul Lassi",
+            "description": "Amul Lassi",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 90,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 104.87,
+                    "platform": "Blinkit",
+                    "deliveryTime": "8 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 77.74,
+                    "discount": 19.88,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 62,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.401Z",
+            "updatedAt": "2025-08-04T16:48:30.401Z"
+        },
+        {
+            "id": "24e3450a-ae56-4bb4-b2c5-6641ae2c06e2",
+            "name": "Delicious Fat Spread - Cholesterol Free",
+            "description": "Delicious Fat Spread - Cholesterol Free",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 105,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 107.83,
+                    "platform": "Blinkit",
+                    "deliveryTime": "9 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 115.12,
+                    "discount": 9.77,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 69,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.374Z",
+            "updatedAt": "2025-08-04T16:48:30.374Z"
+        },
+        {
+            "id": "e0aedca8-3709-4684-b4a7-d5a47e2d4e0d",
+            "name": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "description": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 219,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 254.36,
+                    "platform": "Blinkit",
+                    "deliveryTime": "7 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 237.94,
+                    "discount": 11.8,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 83,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.347Z",
+            "updatedAt": "2025-08-04T16:48:30.347Z"
+        },
+        {
+            "id": "e9ad4b8f-fe50-44c7-8b02-a1e926d5c7b4",
+            "name": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "description": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 76,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 82.43,
+                    "platform": "Blinkit",
+                    "deliveryTime": "6 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 74.21,
+                    "discount": 5.89,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 70,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.428Z",
+            "updatedAt": "2025-08-04T16:48:30.428Z"
+        },
+        {
+            "id": "ff7319a9-9477-4347-8acb-d00877e69106",
+            "name": "Amul Lassi",
+            "description": "Amul Lassi",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 90,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 104.87,
+                    "platform": "Blinkit",
+                    "deliveryTime": "8 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 77.74,
+                    "discount": 19.88,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 62,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.401Z",
+            "updatedAt": "2025-08-04T16:48:30.401Z"
+        },
+        {
+            "id": "24e3450a-ae56-4bb4-b2c5-6641ae2c06e2",
+            "name": "Delicious Fat Spread - Cholesterol Free",
+            "description": "Delicious Fat Spread - Cholesterol Free",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 105,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 107.83,
+                    "platform": "Blinkit",
+                    "deliveryTime": "9 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 115.12,
+                    "discount": 9.77,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 69,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.374Z",
+            "updatedAt": "2025-08-04T16:48:30.374Z"
+        },
+        {
+            "id": "e0aedca8-3709-4684-b4a7-d5a47e2d4e0d",
+            "name": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "description": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 219,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 254.36,
+                    "platform": "Blinkit",
+                    "deliveryTime": "7 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 237.94,
+                    "discount": 11.8,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 83,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.347Z",
+            "updatedAt": "2025-08-04T16:48:30.347Z"
+        },
+        {
+            "id": "e9ad4b8f-fe50-44c7-8b02-a1e926d5c7b4",
+            "name": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "description": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 76,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 82.43,
+                    "platform": "Blinkit",
+                    "deliveryTime": "6 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 74.21,
+                    "discount": 5.89,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 70,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.428Z",
+            "updatedAt": "2025-08-04T16:48:30.428Z"
+        },
+        {
+            "id": "ff7319a9-9477-4347-8acb-d00877e69106",
+            "name": "Amul Lassi",
+            "description": "Amul Lassi",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 90,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 104.87,
+                    "platform": "Blinkit",
+                    "deliveryTime": "8 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 77.74,
+                    "discount": 19.88,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 62,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.401Z",
+            "updatedAt": "2025-08-04T16:48:30.401Z"
+        },
+        {
+            "id": "24e3450a-ae56-4bb4-b2c5-6641ae2c06e2",
+            "name": "Delicious Fat Spread - Cholesterol Free",
+            "description": "Delicious Fat Spread - Cholesterol Free",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 105,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 107.83,
+                    "platform": "Blinkit",
+                    "deliveryTime": "9 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 115.12,
+                    "discount": 9.77,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 69,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.374Z",
+            "updatedAt": "2025-08-04T16:48:30.374Z"
+        },
+        {
+            "id": "e0aedca8-3709-4684-b4a7-d5a47e2d4e0d",
+            "name": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "description": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 219,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 254.36,
+                    "platform": "Blinkit",
+                    "deliveryTime": "7 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 237.94,
+                    "discount": 11.8,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 83,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.347Z",
+            "updatedAt": "2025-08-04T16:48:30.347Z"
+        },
+        {
+            "id": "e9ad4b8f-fe50-44c7-8b02-a1e926d5c7b4",
+            "name": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "description": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 76,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 82.43,
+                    "platform": "Blinkit",
+                    "deliveryTime": "6 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 74.21,
+                    "discount": 5.89,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 70,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.428Z",
+            "updatedAt": "2025-08-04T16:48:30.428Z"
+        },
+        {
+            "id": "ff7319a9-9477-4347-8acb-d00877e69106",
+            "name": "Amul Lassi",
+            "description": "Amul Lassi",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 90,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 104.87,
+                    "platform": "Blinkit",
+                    "deliveryTime": "8 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 77.74,
+                    "discount": 19.88,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 62,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.401Z",
+            "updatedAt": "2025-08-04T16:48:30.401Z"
+        },
+        {
+            "id": "24e3450a-ae56-4bb4-b2c5-6641ae2c06e2",
+            "name": "Delicious Fat Spread - Cholesterol Free",
+            "description": "Delicious Fat Spread - Cholesterol Free",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 105,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 107.83,
+                    "platform": "Blinkit",
+                    "deliveryTime": "9 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 115.12,
+                    "discount": 9.77,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 69,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.374Z",
+            "updatedAt": "2025-08-04T16:48:30.374Z"
+        },
+        {
+            "id": "e0aedca8-3709-4684-b4a7-d5a47e2d4e0d",
+            "name": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "description": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 219,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 254.36,
+                    "platform": "Blinkit",
+                    "deliveryTime": "7 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 237.94,
+                    "discount": 11.8,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 83,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.347Z",
+            "updatedAt": "2025-08-04T16:48:30.347Z"
+        },
+        {
+            "id": "e9ad4b8f-fe50-44c7-8b02-a1e926d5c7b4",
+            "name": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "description": "Amul A2 Buffalo Fresh Milk 500 ml X 2 Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1200-1200,pr-true,f-auto,q-80/cms/product_variant/447465e0-b603-4da4-b165-67ba05fcfdc5.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 76,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 82.43,
+                    "platform": "Blinkit",
+                    "deliveryTime": "6 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 74.21,
+                    "discount": 5.89,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 70,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.428Z",
+            "updatedAt": "2025-08-04T16:48:30.428Z"
+        },
+        {
+            "id": "ff7319a9-9477-4347-8acb-d00877e69106",
+            "name": "Amul Lassi",
+            "description": "Amul Lassi",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/691319c4-b18d-42cd-9bed-7293ceed09c3.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 90,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 104.87,
+                    "platform": "Blinkit",
+                    "deliveryTime": "8 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 77.74,
+                    "discount": 19.88,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 62,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.401Z",
+            "updatedAt": "2025-08-04T16:48:30.401Z"
+        },
+        {
+            "id": "24e3450a-ae56-4bb4-b2c5-6641ae2c06e2",
+            "name": "Delicious Fat Spread - Cholesterol Free",
+            "description": "Delicious Fat Spread - Cholesterol Free",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 105,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 107.83,
+                    "platform": "Blinkit",
+                    "deliveryTime": "9 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 115.12,
+                    "discount": 9.77,
+                    "platform": "Instamart",
+                    "deliveryTime": "6 minutes"
+                }
+            ],
+            "trendingScore": 69,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.374Z",
+            "updatedAt": "2025-08-04T16:48:30.374Z"
+        },
+        {
+            "id": "e0aedca8-3709-4684-b4a7-d5a47e2d4e0d",
+            "name": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "description": "Amul Taaza Homogenised Toned Milk (Tetra Pack) 1 l Combo",
+            "category": {
+                "name": "Dairy Products",
+                "image": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg"
+            },
+            "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2108c843-2504-4329-8919-3732e6d5f4a0.jpg",
+            "brand": "Amul",
+            "platformPrices": [
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 219,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
+                    "price": 254.36,
+                    "platform": "Blinkit",
+                    "deliveryTime": "7 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//instamart.png",
+                    "price": 237.94,
+                    "discount": 11.8,
+                    "platform": "Instamart",
+                    "deliveryTime": "5 minutes"
+                }
+            ],
+            "trendingScore": 83,
+            "stock": "In Stock",
+            "quantity": 0,
+            "reviews": [],
+            "createdAt": "2025-08-04T16:48:30.347Z",
+            "updatedAt": "2025-08-04T16:48:30.347Z"
         }
     ],
     "pagination": {
