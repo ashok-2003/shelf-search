@@ -120,7 +120,7 @@ export default function DocsPage() {
   return (
     <div className="flex flex-row min-h-screen gap-2">
 
-      <div className="hidden w-1/5 min-h-screen border border-red-500 md:block">
+      <div className="hidden w-1/5 min-h-screen md:block">
         <FilterSideBar
           onPriceChange={setMaxPrice}
           onPlatformsChange={setSelectedPlatforms}
@@ -128,7 +128,7 @@ export default function DocsPage() {
         />
       </div>
 
-      <div className="w-full border border-red-500 md:w-4/5">
+      <div className="w-full md:w-4/5">
         <div className="flex flex-col gap-4 m-2">
           <div className="grid w-full grid-cols-12 gap-1 sm:gap-2">
             {/* Filter Button for mobile screens */}
