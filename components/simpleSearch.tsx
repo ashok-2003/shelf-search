@@ -41,7 +41,7 @@ export const SimpleSearchComponent = ({
           input: "text-sm placeholder:text-default-500 cursor-pointer",
         }}
         radius="sm"
-        size="md"
+        size="lg"
         readOnly
         onClick={handleClick}
       />

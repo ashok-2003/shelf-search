@@ -106,7 +106,7 @@ export default function AboutPage() {
       </div>
 
       <div className="mb-8">
-        <SimpleSearchComponent/>
+        <SimpleSearchComponent className="w-full"/>
       </div>
 
       {/* Quick Delivery Section */}
