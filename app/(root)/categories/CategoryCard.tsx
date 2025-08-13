@@ -18,7 +18,7 @@ export const CategoryCard = ({
 }) => {
   return (
     <div className="flex-shrink-0 cursor-pointer" onClick={onClick}>
-      <div className={`w-20 h-25 relative items-center text-center flex flex-col`}>
+      <div className={`w-18 h-23 md:w-20 md:h-25 relative items-center text-center flex flex-col`}>
         {/* Image Container */}
         <div className="mb-2">
           <Image
