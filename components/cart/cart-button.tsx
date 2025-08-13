@@ -17,6 +17,7 @@ export const CartButton = ({ cartItemsCount = 3 }: CartButtonProps) => {
     return (
         <>
             <Button
+                radius="sm"
                 className="flex items-center gap-2 bg-[#176a43] text-white"
                 onPress={() => setIsCartOpen(true)}
                 isLoading={false}

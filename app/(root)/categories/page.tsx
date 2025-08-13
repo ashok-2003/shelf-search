@@ -52,7 +52,7 @@ export default function DocsPage() {
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
   };
-  
+
   // Handlers for the drawer
   const openFilterDrawer = () => setIsFilterDrawerOpen(true);
   const closeFilterDrawer = () => setIsFilterDrawerOpen(false);
@@ -83,17 +83,26 @@ export default function DocsPage() {
 
       <div className="w-full border border-red-500 md:w-4/5">
         <div className="flex flex-col gap-4 m-2">
-          <div className="flex flex-row items-center justify-between">
+          <div className="grid w-full grid-cols-12 gap-1 sm:gap-2">
             {/* Filter Button for mobile screens */}
-            <div className="md:hidden">
-              <Button onClick={openFilterDrawer} variant="outline" className="flex items-center gap-2">
+            <div className="col-span-2 md:hidden">
+              <Button
+                onClick={openFilterDrawer}
+                variant="outline"
+                className="flex items-center justify-center w-full gap-2"
+              >
                 <SlidersHorizontal className="w-4 h-4" />
               </Button>
             </div>
-            <div>
-              <SimpleSearchComponent className='w-44' />
+            {/* Search Bar */}
+            <div className="col-span-7 md:col-span-10">
+              <SimpleSearchComponent className='w-full' />
             </div>
-            <div>
+
+            <div className='col-span-1 md:hidden' />
+
+            {/* Cart Button - aligned to the right */}
+            <div className="col-span-2 justify-self-end">
               <CartButton />
             </div>
           </div>
@@ -102,9 +111,8 @@ export default function DocsPage() {
             {categories.map((category) => (
               <div
                 key={category}
-                className={`cursor-pointer px-4 py-2 rounded-full ${
-                  selectedCategory === category ? 'bg-black text-white' : 'bg-gray-100 text-gray-800'
-                }`}
+                className={`cursor-pointer px-4 py-2 rounded-full ${selectedCategory === category ? 'bg-black text-white' : 'bg-gray-100 text-gray-800'
+                  }`}
                 onClick={() => handleCategorySelect(category)}
               >
                 {category}
@@ -119,7 +127,7 @@ export default function DocsPage() {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile Filter Drawer (conditionally rendered) */}
       <FilterDrawer
         isOpen={isFilterDrawerOpen}
