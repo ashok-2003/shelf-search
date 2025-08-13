@@ -1,8 +1,6 @@
 "use client";
 
 import { FilterSideBar, Platform } from './FilterSideBar';
-import { Button } from '@/components/ui/button';
-import { X } from 'lucide-react';
 import { 
   Drawer,
   DrawerContent,

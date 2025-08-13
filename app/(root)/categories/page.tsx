@@ -5,7 +5,10 @@ import { FilterDrawer } from './FilterDrawer';
 import { SimpleSearchComponent } from '@/components/simpleSearch';
 import { CartButton } from '@/components/cart/cart-button';
 import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { SlidersHorizontal } from 'lucide-react';
+import { CategoryCard } from './CategoryCard';
+
 
 // Assuming this data would be fetched from an API in a real-world scenario
 const availablePlatforms: Platform[] = [
@@ -19,25 +22,66 @@ const availablePlatforms: Platform[] = [
 
 // Mock category data
 const categories = [
-  "All",
-  "Kitchen",
-  "Electronics",
-  "Grocery",
-  "Clothes",
-  "Home",
-  "Beauty",
-  "Toys",
-  "Sports"
+  {
+    "name": "All",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Dairy Products", 
+    "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Electronics",
+    "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Grocery",
+    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Headphones",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Washing Machines",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Medical",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Beauty",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Sports",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Books",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=center"
+  },
+  {
+    "name": "Clothing",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=400&fit=crop&crop=center"
+  }
 ];
 
-// Assuming a Product type exists
+
+
+// Product interface
 interface Product {
-  // Define your product properties here
   name: string;
   price: number;
   platform: string;
-  // ... other properties
 }
+
+
 
 export default function DocsPage() {
   // State for the filter values
@@ -106,19 +150,19 @@ export default function DocsPage() {
               <CartButton />
             </div>
           </div>
-          {/* Category section */}
-          <div className="flex flex-row gap-4 p-2 overflow-x-auto border-b">
+
+          {/* Category Section with consistent spacing */}
+          <div className="flex gap-4 px-1 pb-2 overflow-x-auto">
             {categories.map((category) => (
-              <div
-                key={category}
-                className={`cursor-pointer px-4 py-2 rounded-full ${selectedCategory === category ? 'bg-black text-white' : 'bg-gray-100 text-gray-800'
-                  }`}
-                onClick={() => handleCategorySelect(category)}
-              >
-                {category}
-              </div>
+              <CategoryCard
+                key={category.name}
+                category={category}
+                isSelected={selectedCategory === category.name}
+                onClick={() => handleCategorySelect(category.name)}
+              />
             ))}
           </div>
+
           <div>
             <p>Products will be filtered based on:</p>
             <p>Max Price: {maxPrice}</p>
