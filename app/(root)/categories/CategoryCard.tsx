@@ -22,7 +22,6 @@ export const CategoryCard = ({
         {/* Image Container */}
         <div className="mb-2">
           <Image
-            isZoomed={isSelected}
             radius='sm'
             src={category.image}
             alt={category.name}

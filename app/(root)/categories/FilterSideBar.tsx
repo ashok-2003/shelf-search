@@ -14,28 +14,27 @@ interface FilterBarProps {
   onPriceChange: (newPrice: number) => void;
   onPlatformsChange: (newPlatforms: string[]) => void;
   platformsData: Platform[];
+  maxPrice: number;
+  selectedPlatforms: string[];
 }
 
-export function FilterSideBar({ onPriceChange, onPlatformsChange, platformsData }: FilterBarProps) {
-  const [price, setPrice] = useState([100]);
-  const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
+export function FilterSideBar({  onPriceChange, onPlatformsChange, platformsData, maxPrice, selectedPlatforms }: FilterBarProps) {
+  
 
   // Handler for slider changes, updates local state and calls parent's prop function
   const handlePriceChange = (newPrice: number[]) => {
-    setPrice(newPrice);
-    onPriceChange(newPrice[0]); // prop up the chain 
+    onPriceChange(newPrice[0]);
   };
 
   
-  const handlePlatformsChange = (platform: string, checked: boolean|string) => {
+  const handlePlatformsChange = (platform: string, checked: boolean | string) => {
     let updatedPlatforms;
     if (checked) {
       updatedPlatforms = [...selectedPlatforms, platform];
     } else {
       updatedPlatforms = selectedPlatforms.filter((p) => p !== platform);
     }
-    setSelectedPlatforms(updatedPlatforms);
-    onPlatformsChange(updatedPlatforms); // prop up the chain 
+    onPlatformsChange(updatedPlatforms);
   };
 
   return (
@@ -44,10 +43,10 @@ export function FilterSideBar({ onPriceChange, onPlatformsChange, platformsData 
         <h2 className="font-bold text-md">Filter</h2>
         <h5 className="text-xs ">Price Range</h5>
         <div className="mt-2">
-          <div className="text-sm font-light text-right">max - {price[0]}</div>
+          <div className="text-sm font-light text-right">max - {maxPrice}</div>
           <Slider
             className="mt-2"
-            value={price}
+            value={[maxPrice]}
             onValueChange={handlePriceChange}
             min={30}
             max={100}
@@ -60,6 +59,7 @@ export function FilterSideBar({ onPriceChange, onPlatformsChange, platformsData 
           <div key={p.platform} className="flex items-center my-2 space-x-2">
             <Checkbox
               id={p.platform}
+              
               checked={selectedPlatforms.includes(p.platform)}
               onCheckedChange={(checked) => handlePlatformsChange(p.platform, checked)}
             />
@@ -75,6 +75,7 @@ export function FilterSideBar({ onPriceChange, onPlatformsChange, platformsData 
           <div key={p.platform} className="flex items-center my-2 space-x-2">
             <Checkbox
               id={p.platform}
+              // Use the prop value to determine if the checkbox is checked
               checked={selectedPlatforms.includes(p.platform)}
               onCheckedChange={(checked) => handlePlatformsChange(p.platform, checked)}
             />

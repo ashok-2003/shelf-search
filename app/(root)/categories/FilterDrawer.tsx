@@ -15,9 +15,12 @@ interface FilterDrawerProps {
   onPriceChange: (newPrice: number) => void;
   onPlatformsChange: (newPlatforms: string[]) => void;
   platformsData: Platform[];
+  // New props to make FilterBar a controlled component
+  selectedPlatforms: string[];
+  maxPrice: number;
 }
 
-export function FilterDrawer({ isOpen, onClose, onPriceChange, onPlatformsChange, platformsData }: FilterDrawerProps) {
+export function FilterDrawer({ isOpen, onClose, onPriceChange, onPlatformsChange, platformsData, selectedPlatforms, maxPrice }: FilterDrawerProps) {
   return (
     <Drawer isOpen={isOpen} onClose={onClose} placement="bottom" size="2xl">
       <DrawerContent className="w-full">
@@ -29,6 +32,9 @@ export function FilterDrawer({ isOpen, onClose, onPriceChange, onPlatformsChange
             onPriceChange={onPriceChange}
             onPlatformsChange={onPlatformsChange}
             platformsData={platformsData}
+            // Pass the state down as props
+            selectedPlatforms={selectedPlatforms}
+            maxPrice={maxPrice}
           />
         </DrawerBody>
       </DrawerContent>
