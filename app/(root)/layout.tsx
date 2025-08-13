@@ -9,9 +9,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="relative flex flex-col h-screen">
+        <div className="relative flex flex-col items-center h-screen">
             <Navbar />
-            <main className="flex-grow w-full px-2 pt-4 md:px-4">
+            <main className="flex-grow w-full px-2 pt-4 md:px-4 max-w-7xl ">
                 {children}
             </main>
             <footer className="flex items-center justify-center w-full py-3">
