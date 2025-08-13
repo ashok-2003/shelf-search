@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { SlidersHorizontal } from 'lucide-react';
 import { CategoryCard } from './CategoryCard';
+import { Products } from '@/lib/DemoData/CategoryDefault';
+import { Image } from '@heroui/image';
 
 
 // Assuming this data would be fetched from an API in a real-world scenario
@@ -27,7 +29,7 @@ const categories = [
     "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center"
   },
   {
-    "name": "Dairy Products", 
+    "name": "Dairy Products",
     "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop&crop=center"
   },
   {
@@ -72,6 +74,7 @@ const categories = [
   }
 ];
 
+const result = Products
 
 
 // Product interface
@@ -116,7 +119,7 @@ export default function DocsPage() {
 
   return (
     <div className="flex flex-row min-h-screen gap-2">
-      {/* Desktop Filter Bar (visible on md screens and up) */}
+
       <div className="hidden w-1/5 min-h-screen border border-red-500 md:block">
         <FilterSideBar
           onPriceChange={setMaxPrice}
@@ -138,20 +141,18 @@ export default function DocsPage() {
                 <SlidersHorizontal className="w-4 h-4" />
               </Button>
             </div>
-            {/* Search Bar */}
+
             <div className="col-span-7 md:col-span-10">
               <SimpleSearchComponent className='w-full' />
             </div>
 
+            {/* just for extra space  */}
             <div className='col-span-1 md:hidden' />
-
-            {/* Cart Button - aligned to the right */}
             <div className="col-span-2 justify-self-end">
               <CartButton />
             </div>
           </div>
 
-          {/* Category Section with consistent spacing */}
           <div className="flex gap-4 px-1 pb-2 overflow-x-auto">
             {categories.map((category) => (
               <CategoryCard
@@ -163,14 +164,34 @@ export default function DocsPage() {
             ))}
           </div>
 
+          
+          <div className="grid grid-cols-3 gap-2 p-2 mt-6 rounded-sm md:mt-8 md:grid-cols-5 lg:grid-cols-6 bg-default-50">
+            {result.data.map((item, index) => (
+              <div key={item.id} className="pb-1 mb-2 transition-all bg-white border rounded-sm shadow-md cursor-pointer border-default-100 group border-spacing-1 shadow-gray-200/40 hover:shadow-lg hover:shadow-gray-400/50">
+                <div className="flex items-center justify-center">
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.name}
+                    className="object-contain rounded-sm"
+                  />
+                </div>
+                <div className="mt-2 ml-1 text-left">
+                  <p className="text-sm font-medium">{item.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <div>
             <p>Products will be filtered based on:</p>
             <p>Max Price: {maxPrice}</p>
             <p>Selected Platforms: {selectedPlatforms.join(', ')}</p>
             <p>Selected Category: {selectedCategory}</p>
+            <p>result length: {result.data.length}</p>
           </div>
         </div>
       </div>
+
 
       {/* Mobile Filter Drawer (conditionally rendered) */}
       <FilterDrawer
