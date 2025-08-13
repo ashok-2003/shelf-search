@@ -16,7 +16,7 @@ interface FilterBarProps {
   platformsData: Platform[];
 }
 
-export function FilterBar({ onPriceChange, onPlatformsChange, platformsData }: FilterBarProps) {
+export function FilterSideBar({ onPriceChange, onPlatformsChange, platformsData }: FilterBarProps) {
   const [price, setPrice] = useState([100]);
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
 
