@@ -1,8 +1,11 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { FilterSideBar, Platform } from './FilterSideBar';
+import { FilterDrawer } from './FilterDrawer';
 import { SimpleSearchComponent } from '@/components/simpleSearch';
 import { CartButton } from '@/components/cart/cart-button';
+import { Button } from '@/components/ui/button';
+import { SlidersHorizontal } from 'lucide-react';
 
 // Assuming this data would be fetched from an API in a real-world scenario
 const availablePlatforms: Platform[] = [
@@ -40,15 +43,19 @@ export default function DocsPage() {
   // State for the filter values
   const [maxPrice, setMaxPrice] = useState<number>(100);
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
-  // New state for the selected category
-  const [selectedCategory, setSelectedCategory] = useState<string>("All"); 
-  // State for the products
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [products, setProducts] = useState<Product[]>([]);
+  // New state for the mobile filter drawer visibility
+  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
   // Function to handle category selection
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
   };
+  
+  // Handlers for the drawer
+  const openFilterDrawer = () => setIsFilterDrawerOpen(true);
+  const closeFilterDrawer = () => setIsFilterDrawerOpen(false);
 
   // useEffect to fetch products whenever filters or category change
   useEffect(() => {
@@ -58,38 +65,33 @@ export default function DocsPage() {
         selectedPlatforms,
         selectedCategory,
       });
-
       // Your backend API call would go here
-      // const params = new URLSearchParams({
-      //   maxPrice: maxPrice.toString(),
-      //   platforms: selectedPlatforms.join(','),
-      //   category: selectedCategory, // Add the category to your query parameters
-      // }).toString();
-      //
-      // const response = await fetch(`your-api-endpoint/products?${params}`);
-      // const data = await response.json();
-      // setProducts(data);
     };
-
     fetchProducts();
-  }, [maxPrice, selectedPlatforms, selectedCategory]); // Add selectedCategory to the dependency array
+  }, [maxPrice, selectedPlatforms, selectedCategory]);
 
   return (
-    <div className="flex flex-row gap-2">
-      <div className="w-1/5 border border-red-500">
+    <div className="flex flex-row min-h-screen gap-2">
+      {/* Desktop Filter Bar (visible on md screens and up) */}
+      <div className="hidden w-1/5 min-h-screen border border-red-500 md:block">
         <FilterSideBar
           onPriceChange={setMaxPrice}
           onPlatformsChange={setSelectedPlatforms}
           platformsData={availablePlatforms}
         />
       </div>
-      <div className="w-4/5 border border-red-500">
+
+      <div className="w-full border border-red-500 md:w-4/5">
         <div className="flex flex-col gap-4 m-2">
-          <div className="flex flex-row justify-between">
+          <div className="flex flex-row items-center justify-between">
+            {/* Filter Button for mobile screens */}
+            <div className="md:hidden">
+              <Button onClick={openFilterDrawer} variant="outline" className="flex items-center gap-2">
+                <SlidersHorizontal className="w-4 h-4" />
+              </Button>
+            </div>
             <div>
-              <SimpleSearchComponent 
-                className='w-32'
-              />
+              <SimpleSearchComponent className='w-44' />
             </div>
             <div>
               <CartButton />
@@ -110,7 +112,6 @@ export default function DocsPage() {
             ))}
           </div>
           <div>
-            {/* You would render your products here */}
             <p>Products will be filtered based on:</p>
             <p>Max Price: {maxPrice}</p>
             <p>Selected Platforms: {selectedPlatforms.join(', ')}</p>
@@ -118,6 +119,15 @@ export default function DocsPage() {
           </div>
         </div>
       </div>
+      
+      {/* Mobile Filter Drawer (conditionally rendered) */}
+      <FilterDrawer
+        isOpen={isFilterDrawerOpen}
+        onClose={closeFilterDrawer}
+        onPriceChange={setMaxPrice}
+        onPlatformsChange={setSelectedPlatforms}
+        platformsData={availablePlatforms}
+      />
     </div>
   );
 }
