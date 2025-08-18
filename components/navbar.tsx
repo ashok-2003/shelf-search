@@ -68,7 +68,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <HeroUINavbar maxWidth="xl" position="sticky" isBordered isBlurred shouldHideOnScroll>
+      <HeroUINavbar maxWidth="xl" position="sticky" isBordered isBlurred>
         {/* Left section - Logo */}
         <NavbarContent className="basis-1/3" justify="start">
           <NavbarBrand as="li" className="gap-2 max-w-fit">

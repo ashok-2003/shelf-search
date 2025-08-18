@@ -153,7 +153,7 @@ export default function CategoryPage() {
         </div>
 
         {/* Scrollable Products Section */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 max-h-screen overflow-y-auto">
           <div className="grid grid-cols-2 gap-2 p-2 rounded-sm md:grid-cols-5 lg:grid-cols-6 bg-default-50">
             {result.data.map((item, index) => (
               <div key={item.id} className="pb-1 mb-2 bg-white border rounded-sm shadow-md cursor-pointer border-default-100 hover:shadow-lg">
