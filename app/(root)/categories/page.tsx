@@ -9,13 +9,6 @@ import { SlidersHorizontal, ChevronDown, Plus, Minus } from 'lucide-react';
 import { CategoryCard } from './CategoryCard';
 import { Products } from '@/lib/DemoData/CategoryDefault';
 import { Button } from '@heroui/button';
-import { useCartStore } from '@/store/CartStore';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { ProductCard } from '@/components/ProductCard';
 
 // Assuming this data would be fetched from an API in a real-world scenario
