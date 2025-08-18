@@ -4,18 +4,21 @@ import { persist } from 'zustand/middleware';
 
 export interface CartItem {
     productId: string;
-    productName?: string;
+    productName: string;
     quantity: number;
     platform: string;
     platformLogo: string;
-    price?: number;
-    discount?: number | null;
-    imageUrl?: string;
+    price: number;
+    discount?: number;
+    imageUrl: string;
     brand?: string;
     category?: {
         name: string;
         image: string;
     };
+    stock?: string;
+    deliveryTime?: string;
+    // Add any other fields you need for display
 }
 
 interface CartData {
@@ -25,10 +28,29 @@ interface CartData {
 interface CartStore {
     cart: CartData;
 
-    addItem: (productId: string, platform: string, platformLogo: string, quantity?: number) => void;
-    removeItem: (productId: string, platform: string, quantity?: number) => void; // Simplified!
+    addItem: (
+        productId: string, 
+        platform: string, 
+        platformLogo: string, 
+        quantity: number,
+        // Enhanced parameters for rich data storage
+        productData: {
+            productName: string;
+            price: number;
+            discount?: number;
+            imageUrl: string;
+            brand?: string;
+            category?: {
+                name: string;
+                image: string;
+            };
+            stock?: string;
+            deliveryTime?: string;
+        }
+    ) => void;
+    
+    removeItem: (productId: string, platform: string, quantity?: number) => void;
     clearCart: () => void;
-
     getItemQuantity: (productId: string, platform: string) => number;
     getTotalItems: () => number;
     getPlatformItems: (platform: string) => CartItem[];
@@ -39,7 +61,7 @@ export const useCartStore = create<CartStore>()(
         (set, get) => ({
             cart: {},
 
-            addItem: (productId, platform, platformLogo, quantity = 1) => {
+            addItem: (productId, platform, platformLogo, quantity = 1, productData) => {
                 const sessionId = getSessionId();
 
                 set((state) => {
@@ -47,6 +69,7 @@ export const useCartStore = create<CartStore>()(
                     const existingIndex = items.findIndex(item => item.productId === productId);
 
                     if (existingIndex >= 0) {
+                        // Update existing item quantity
                         return {
                             cart: {
                                 ...state.cart,
@@ -59,18 +82,34 @@ export const useCartStore = create<CartStore>()(
                         };
                     }
 
+                    // Add new item with rich data
+                    const newItem: CartItem = {
+                        productId,
+                        platform,
+                        platformLogo,
+                        quantity,
+                        productName: productData.productName,
+                        price: productData.price,
+                        discount: productData.discount,
+                        imageUrl: productData.imageUrl,
+                        brand: productData.brand,
+                        category: productData.category,
+                        stock: productData.stock,
+                        deliveryTime: productData.deliveryTime,
+                    };
+
                     return {
                         cart: {
                             ...state.cart,
-                            [platform]: [...items, { productId, platform, platformLogo, quantity }]
+                            [platform]: [...items, newItem]
                         }
                     };
                 });
 
+                // Backend sync with minimal data (fire and forget)
                 syncToBackend.add(sessionId, productId, platform, platformLogo, quantity);
             },
 
-            // Smart removeItem - handles both partial and full removal
             removeItem: (productId, platform, quantity) => {
                 const sessionId = getSessionId();
 

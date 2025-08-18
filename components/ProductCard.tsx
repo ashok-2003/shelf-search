@@ -1,4 +1,5 @@
 "use client"
+
 import { useState, useEffect } from 'react';
 import { Image } from '@heroui/image';
 import { Button } from '@heroui/button';
@@ -10,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
 // Individual Product Card Component
 export const ProductCard = ({ item }: { item: any }) => {
   const { addItem, removeItem, getItemQuantity } = useCartStore();
@@ -18,11 +20,25 @@ export const ProductCard = ({ item }: { item: any }) => {
   const quantity = getItemQuantity(item.id, selectedPlatform.platform);
 
   const handleAddToCart = () => {
+    // Prepare rich product data for local storage
+    const productData = {
+      productName: item.name,
+      price: selectedPlatform.price,
+      discount: selectedPlatform.discount,
+      imageUrl: item.imageUrl,
+      brand: item.brand,
+      category: item.category,
+      stock: item.stock,
+      deliveryTime: selectedPlatform.deliveryTime,
+    };
+
+    // Call addItem with rich data
     addItem(
       item.id,
       selectedPlatform.platform,
       selectedPlatform.image,
-      1
+      1,
+      productData // Pass rich data for local storage
     );
   };
 
