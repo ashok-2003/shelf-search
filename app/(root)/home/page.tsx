@@ -8,90 +8,6 @@ import { HomeData } from "@/lib/DemoData/HomeData";
 export default function AboutPage() {
   const cartItemsCount = 3; // This will come from your server-side cart state later
 
-  // const result = {
-  //   "trending": [
-  //       "Davidoff",
-  //       "Amul Vanilla",
-  //       "Rice"
-  //   ],
-  //   "eta": [
-  //       {
-  //           "eta": "7 mins",
-  //           "image": "https://d2chhaxkq6tvay.cloudfront.net/platforms/zepto.webp",
-  //           "platform": "Zepto",
-  //           "open": true,
-  //           "url": "https://zeptonow.com",
-  //           "storeId": "5d205066-36a5-4929-982a-7571c60f876b",
-  //           "storeIds": [
-  //               "5d205066-36a5-4929-982a-7571c60f876b",
-  //               "1d31c12c-1669-4ed5-bf1e-251da70753b8"
-  //           ]
-  //       },
-  //       {
-  //           "eta": "9 mins",
-  //           "image": "https://d2chhaxkq6tvay.cloudfront.net/platforms/bigbasket.webp",
-  //           "url": "https://bbnow.bigbasket.com",
-  //           "platform": "BigBasket",
-  //           "storeId": "",
-  //           "storeIds": []
-  //       },
-  //       {
-  //           "eta": "10 mins",
-  //           "image": "https://d2chhaxkq6tvay.cloudfront.net/platforms/swiggy.webp",
-  //           "url": "https://swiggy.com",
-  //           "platform": "Swiggy",
-  //           "open": true,
-  //           "storeId": "1382258"
-  //       },
-  //       {
-  //           "eta": "10 mins",
-  //           "image": "https://d2chhaxkq6tvay.cloudfront.net/platforms/blinkit.webp",
-  //           "url": "https://blinkit.com",
-  //           "platform": "BlinkIt",
-  //           "open": true,
-  //           "storeId": "34126",
-  //           "storeIds": [
-  //               "31004",
-  //               "34126",
-  //               "35940",
-  //               "36048",
-  //               "41645"
-  //           ]
-  //       },
-  //       {
-  //           "eta": "4PM-6PM",
-  //           "image": "https://d2chhaxkq6tvay.cloudfront.net/platforms/dmart.webp",
-  //           "url": "https://dmart.in",
-  //           "platform": "DMart",
-  //           "storeId": "10711",
-  //           "open": true
-  //       }
-  //   ],
-  //   "meta": {
-  //       "trendingTitle": "Trending Searches",
-  //       "etaTitle": "Delivering at your location right now",
-  //       "recentTitle": "Recent Searches"
-  //   },
-  //   "trendingItems": [
-  //       {
-  //           "name": "Atta",
-  //           "image": "https://cdn.zeptonow.com/production///tr:w-200,ar-1021-1021,pr-true,f-auto,q-80/cms/product_variant/9759cfd9-8099-45fd-bba2-53df01b57c33.jpeg"
-  //       },
-  //       {
-  //           "name": "Rice",
-  //           "image": "https://cdn.zeptonow.com/production///tr:w-200,ar-1021-1021,pr-true,f-auto,q-80/cms/product_variant/20ce782b-ffc8-4b53-9716-381773a1eaaa.jpeg"
-  //       },
-  //       {
-  //           "name": "Detergent",
-  //           "image": "https://cdn.zeptonow.com/production///tr:w-200,ar-1021-1021,pr-true,f-auto,q-80/cms/product_variant/72aaad4d-dfc2-4a2f-838a-cb302594e27e.jpeg"
-  //       },
-  //       {
-  //           "name": "Coffee",
-  //           "image": "https://cdn.zeptonow.com/production///tr:w-200,ar-1021-1021,pr-true,f-auto,q-80/cms/product_variant/ac0f1069-cbfc-4085-ae11-54a41eab65b0.jpeg"
-  //       }
-  //   ]
-  // };
-
   const result = HomeData
 
   return (
@@ -101,7 +17,7 @@ export default function AboutPage() {
           <LocationButton/>
         </div>
         <div>
-          <CartButton cartItemsCount={cartItemsCount} />
+          <CartButton/>
         </div>
       </div>
 
