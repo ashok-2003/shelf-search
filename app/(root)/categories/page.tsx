@@ -5,11 +5,18 @@ import { FilterDrawer } from './FilterDrawer';
 import { SimpleSearchComponent } from '@/components/simpleSearch';
 import { CartButton } from '@/components/cart/cart-button';
 import { Card } from '@/components/ui/card';
-import { SlidersHorizontal } from 'lucide-react';
+import { SlidersHorizontal, ChevronDown, Plus, Minus } from 'lucide-react';
 import { CategoryCard } from './CategoryCard';
 import { Products } from '@/lib/DemoData/CategoryDefault';
-import { Image } from '@heroui/image';
 import { Button } from '@heroui/button';
+import { useCartStore } from '@/store/CartStore';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ProductCard } from '@/components/ProductCard';
 
 // Assuming this data would be fetched from an API in a real-world scenario
 const availablePlatforms: Platform[] = [
@@ -57,7 +64,7 @@ const categories = [
   }
 ];
 
-const result = Products
+const result = Products;
 
 // Product interface
 interface Product {
@@ -65,6 +72,8 @@ interface Product {
   price: number;
   platform: string;
 }
+
+
 
 export default function CategoryPage() {
   // State for the filter values
@@ -133,7 +142,6 @@ export default function CategoryPage() {
               <SimpleSearchComponent className='w-full' />
             </div>
 
-            
             <div className="col-span-2 justify-self-end">
               <CartButton />
             </div>
@@ -154,20 +162,9 @@ export default function CategoryPage() {
 
         {/* Scrollable Products Section */}
         <div className="flex-1 max-h-screen overflow-y-auto">
-          <div className="grid grid-cols-2 gap-2 p-2 rounded-sm md:grid-cols-5 lg:grid-cols-6 bg-default-50">
-            {result.data.map((item, index) => (
-              <div key={item.id} className="pb-1 mb-2 bg-white border rounded-sm shadow-md cursor-pointer border-default-100 hover:shadow-lg">
-                <div className="flex items-center justify-center">
-                  <Image
-                    src={item.imageUrl}
-                    alt={item.name}
-                    className="object-contain rounded-sm"
-                  />
-                </div>
-                <div className="mt-2 ml-1 text-left">
-                  <p className="text-sm font-medium">{item.name}</p>
-                </div>
-              </div>
+          <div className="grid grid-cols-2 gap-2 p-2 rounded-sm md:grid-cols-4 lg:grid-cols-5 bg-default-50">
+            {result.data.map((item) => (
+              <ProductCard key={item.id} item={item} />
             ))}
           </div>
 

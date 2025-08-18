@@ -1002,13 +1002,7 @@ export const Products = {
             "imageUrl": "https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/a7da26d1-33d9-4d69-8c41-7d614bf57ac9.jpeg",
             "brand": "Amul",
             "platformPrices": [
-                {
-                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
-                    "price": 105,
-                    "discount": 0,
-                    "platform": "Zepto",
-                    "deliveryTime": "11 mins"
-                },
+                
                 {
                     "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//Blinkit-yellow-app-icon.svg.png",
                     "price": 107.83,
@@ -1021,6 +1015,13 @@ export const Products = {
                     "discount": 9.77,
                     "platform": "Instamart",
                     "deliveryTime": "6 minutes"
+                },
+                {
+                    "image": "https://tkrtxmjovnssevackzas.supabase.co/storage/v1/object/public/shelf-search//zepto.png",
+                    "price": 105,
+                    "discount": 0,
+                    "platform": "Zepto",
+                    "deliveryTime": "11 mins"
                 }
             ],
             "trendingScore": 69,
