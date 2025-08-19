@@ -84,6 +84,7 @@ export const NotificationDrawer = ({
 
   return (
     <Drawer
+      radius="none"
       isOpen={isOpen}
       onClose={onClose}
       placement="right"

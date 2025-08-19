@@ -124,6 +124,7 @@ export const CartDrawer = ({
 
   return (
     <Drawer
+    radius="none"
       isOpen={isOpen}
       onClose={onClose}
       placement="right"
@@ -295,7 +296,7 @@ export const CartDrawer = ({
         </DrawerBody>
 
         {/* Grand Total Footer */}
-        {/* {totalItems > 0 && (
+        {totalItems > 0 && (
           <DrawerFooter className="border-t bg-default-50">
             
               <div className="w-full space-y-2 text-sm">
@@ -321,7 +322,7 @@ export const CartDrawer = ({
               </div>
             
           </DrawerFooter>
-        )} */}
+        )}
       </DrawerContent>
     </Drawer>
   );
